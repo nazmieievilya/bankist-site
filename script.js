@@ -199,9 +199,14 @@ slider();
 document.addEventListener('DOMContentLoaded', function (e) {
   console.log(e);
 });
+const btnNavEl = document.querySelector('.btn-mobile-nav');
+const headerEl = document.querySelector('.header');
 
-window.addEventListener('beforeunload', function (e) {
-  e.preventDefault();
-  console.log(e);
-  e.returnValue = '';
+btnNavEl.addEventListener('click', function () {
+  headerEl.classList.toggle('nav-open');
 });
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });
