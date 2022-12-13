@@ -14,6 +14,9 @@ const contents = document.querySelectorAll('.operations__content');
 const nav = document.querySelector('.nav');
 const header = document.querySelector('.header');
 
+const btnNavEl = document.querySelector('.btn-mobile-nav');
+const headerEl = document.querySelector('.header');
+const navEl = document.querySelector('.nav');
 ////////////////////////////
 // modal window
 const openModal = function (e) {
@@ -50,6 +53,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
     document
       .querySelector(e.target.getAttribute('href'))
       .scrollIntoView({ behavior: 'smooth' });
+  headerEl.classList.toggle('nav-open');
 });
 
 document
@@ -199,11 +203,10 @@ slider();
 document.addEventListener('DOMContentLoaded', function (e) {
   console.log(e);
 });
-const btnNavEl = document.querySelector('.btn-mobile-nav');
-const headerEl = document.querySelector('.header');
 
 btnNavEl.addEventListener('click', function () {
   headerEl.classList.toggle('nav-open');
+  navEl.classList.add('sticky');
 });
 // window.addEventListener('beforeunload', function (e) {
 //   e.preventDefault();
